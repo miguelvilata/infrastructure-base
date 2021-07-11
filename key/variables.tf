@@ -2,14 +2,14 @@
 ## DEPLOY REGION ##
 ###################
 variable "region" {
-  default = "ap-northeast-1"
+  default = "eu-west-1"
 }
 ##############
 ## KEY PAIR ##
 ##############
 variable  "key_list" {
   type      = list
-  default   = ["zignaly-prod"]
+  default   = ["devops-prod"]
 }
 
 ##############
@@ -17,11 +17,11 @@ variable  "key_list" {
 ##############
 variable "project" {
   description = "Project name" 
-  default = "zignaly"
+  default = "devops"
 }
 variable "application" {
   description = "Application name"
-  default = "core"
+  default = "base"
 }
 variable "env" {
   description = "Environment type"
