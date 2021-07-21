@@ -4,6 +4,11 @@
 variable "region" {
   default = "eu-west-1"
 }
+
+variable "region_cloudfront" {
+  default = "us-east-1"
+}
+
 ##########################################################
 ## DEFINE THE NAME APROVISIONET FOR CERTIFICATE MANAGER ##
 ##########################################################

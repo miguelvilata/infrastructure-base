@@ -13,8 +13,14 @@ terraform {
 ## CONFIGURATION AWS PROVIDER ##
 ################################
 provider "aws" {
-  version = "~> 3.4"
+  #version = "~> 3.4"
   region  = var.region
+}
+
+provider "aws" {
+  alias  = "cloudfront"
+  #version = "~> 3.4"
+  region  = var.region_cloudfront
 }
 
 # Using these data sources allows the configuration to be
