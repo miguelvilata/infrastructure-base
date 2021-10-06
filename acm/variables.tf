@@ -13,26 +13,26 @@ variable "region_cloudfront" {
 ## DEFINE THE NAME APROVISIONET FOR CERTIFICATE MANAGER ##
 ##########################################################
 variable "domain_name" {
-  default   =   "infra.devopsgeekshubsacademy.click"  ##CAMBIAR
+  default = "infra.devopsgeekshubsacademy.click" ##CAMBIAR
 }
 
 variable "subject_alternative_names" {
-  default   =   [
-      "*.infra.devopsgeekshubsacademy.click", ## CAMBIAR
-      "infra.devopsgeekshubsacademy.click"    ## CAMBIAR
+  default = [
+    "*.infra.devopsgeekshubsacademy.click", ## CAMBIAR
+    "infra.devopsgeekshubsacademy.click"    ## CAMBIAR
   ]
 }
 variable "validation_method" {
-  default   =   "DNS"
+  default = "DNS"
 }
 ##################
 ## DNS ROUTE 53 ##
 ##################
 variable "dns_zone_name" {
-  default   =   "infra.devopsgeekshubsacademy.click."  ## IMPORTANT THE FINAL POINT ## CAMBIAR
+  default = "infra.devopsgeekshubsacademy.click." ## IMPORTANT THE FINAL POINT ## CAMBIAR
 }
 variable "private_zone" {
-  default   =   "false"
+  default = "false"
 }
 
 ##############
@@ -47,7 +47,7 @@ variable "env" {
 variable "creator" {
   default = "DevOps Team"
 }
-variable  "application" {
+variable "application" {
   default = "base"
 }
 variable "terraform" {

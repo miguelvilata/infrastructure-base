@@ -1,4 +1,4 @@
-### Motivation
+### Summary
 
 Why it this PR useful for the project?
 
@@ -6,10 +6,15 @@ Why it this PR useful for the project?
 
 What was done in this PR
 
-### What did you learn?
+### Criticality level of the change
+
+- [ ] Low
+- [ ] High
+- [ ] Critical
 
 ###  Checklist
-- [ ] Is it documented?
+
+- [ ] Documented readme?
 - [ ] Is it monitored?
 
 ### Mandatory meme

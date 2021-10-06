@@ -7,32 +7,31 @@ variable "region" {
 ##############
 ## KEY PAIR ##
 ##############
-variable  "key_list" {
-  type      = list
-  default   = ["devops-prod"]
+variable "key_list" {
+  type    = list(any)
+  default = ["devops-prod"]
 }
 
 ##############
 ## ADD TAGS ##
 ##############
 variable "project" {
-  description = "Project name" 
-  default = "devops"
+  description = "Project name"
+  default     = "devops"
 }
 variable "application" {
   description = "Application name"
-  default = "base"
+  default     = "base"
 }
 variable "env" {
   description = "Environment type"
-  default = "prod"
+  default     = "prod"
 }
 variable "creator" {
   description = "Deploymente by"
-  default = "Devops Team"
+  default     = "Devops Team"
 }
 variable "terraform" {
   description = "Terraform Template"
-  default = "True"
+  default     = "True"
 }
-

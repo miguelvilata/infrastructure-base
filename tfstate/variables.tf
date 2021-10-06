@@ -2,7 +2,7 @@
 ## VARIABLE GLOBAL ##
 #####################
 variable "region" {
-    default = "eu-west-1"
+  default = "eu-west-1"
 }
 
 ##############
@@ -17,7 +17,7 @@ variable "env" {
 variable "creator" {
   default = "DevOps Team"
 }
-variable  "application" {
+variable "application" {
   default = "base"
 }
 variable "terraform" {

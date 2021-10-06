@@ -3,7 +3,7 @@ output "key_name0" {
 }
 
 output "key_prod" {
-  value = tls_private_key.main.0.private_key_pem
+  value     = tls_private_key.main.0.private_key_pem
   sensitive = true
 }
 
@@ -12,7 +12,7 @@ output "key_name" {
   value = aws_key_pair.main.*.key_name
 }
 output "private_key_pem" {
-  value = join("", tls_private_key.main.*.public_key_pem)
+  value     = join("", tls_private_key.main.*.public_key_pem)
   sensitive = true
 }
 output "public_key_openssh" {
@@ -30,4 +30,3 @@ output "key_pair_id" {
 output "fingerprint" {
   value = aws_key_pair.main.*.fingerprint
 }
-

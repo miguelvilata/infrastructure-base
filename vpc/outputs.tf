@@ -22,3 +22,7 @@ output "availability_zone" {
 output "azs" {
   value = var.azs
 }
+
+output "eks_sg" {
+  value = aws_security_group.admin.id
+}

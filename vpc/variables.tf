@@ -5,8 +5,8 @@ variable "region" {
   default = "eu-west-1"
 }
 
-## Ingrese los dos primeros optetos del CIDR: 
-## Ejemplo: 10.0 - 172.16  
+## Ingrese los dos primeros optetos del CIDR:
+## Ejemplo: 10.0 - 172.16
 ## No incluir el punto final. ##
 variable "vpc_cidr" {
   type    = string
@@ -31,7 +31,7 @@ variable "admin_computer_ip" {
 }
 variable "azs" {
   description = "Zonas de disponibilidad para el despliegue"
-  default = ["Aza", "Azb", "Azc"]
+  default     = ["Aza", "Azb", "Azc"]
 }
 
 # Selection Min-"1" and Max="3"
@@ -51,7 +51,7 @@ variable "env" {
 variable "creator" {
   default = "DevOps Team"
 }
-variable  "application" {
+variable "application" {
   default = "base"
 }
 variable "terraform" {

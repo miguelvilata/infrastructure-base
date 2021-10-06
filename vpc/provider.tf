@@ -6,13 +6,13 @@ terraform {
   required_providers {
     aws = {
       version = "~> 3.4"
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
     }
   }
 }
 
 provider "aws" {
-  region  = var.region
+  region = "eu-west-1"
 }
 
 #########################
@@ -34,4 +34,3 @@ data "aws_region" "current" {
 
 data "aws_availability_zones" "available" {
 }
-

@@ -1,3 +1,26 @@
+################################
+## CONFIGURATION AWS PRIVIDER ##
+################################
+terraform {
+  required_version = ">= 1.0.2"
+  required_providers {
+    aws = {
+      version = "~> 3.4"
+      source  = "hashicorp/aws"
+    }
+  }
+}
+
+provider "aws" {
+  region = "eu-west-1"
+}
+
+
+provider "aws" {
+  alias  = "cloudfront"
+  region = "us-east-1"
+}
+
 ############################
 ## REMOTE STATE CONFIGURE ##
 ############################
@@ -8,19 +31,6 @@ terraform {
     key    = "dev/acm_terraform.tfstate"
     region = "eu-west-1"
   }
-}
-################################
-## CONFIGURATION AWS PROVIDER ##
-################################
-provider "aws" {
-  #version = "~> 3.4"
-  region  = var.region
-}
-
-provider "aws" {
-  alias  = "cloudfront"
-  #version = "~> 3.4"
-  region  = var.region_cloudfront
 }
 
 # Using these data sources allows the configuration to be

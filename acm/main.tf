@@ -1,7 +1,7 @@
 resource "aws_acm_certificate" "cert" {
-  domain_name       = var.domain_name
+  domain_name               = var.domain_name
   subject_alternative_names = var.subject_alternative_names
-  validation_method = var.validation_method
+  validation_method         = var.validation_method
   tags = {
     Name        = var.domain_name
     Terraform   = var.terraform
@@ -41,10 +41,11 @@ resource "aws_acm_certificate_validation" "cert" {
 
 # Cloudfront
 resource "aws_acm_certificate" "cloudfront_cert" {
-  provider =  aws.cloudfront
-  domain_name       = var.domain_name
+  provider                  = aws.cloudfront
+  domain_name               = var.domain_name
   subject_alternative_names = var.subject_alternative_names
-  validation_method = var.validation_method
+  validation_method         = var.validation_method
+
   tags = {
     Name        = var.domain_name
     Terraform   = var.terraform
@@ -76,7 +77,7 @@ resource "aws_route53_record" "cloudfront_cert_validation" {
 
 
 resource "aws_acm_certificate_validation" "cloudfront_cert" {
-  provider = aws.cloudfront
+  provider                = aws.cloudfront
   certificate_arn         = aws_acm_certificate.cloudfront_cert.arn
   validation_record_fqdns = [for record in aws_route53_record.cloudfront_cert_validation : record.fqdn]
 }
