@@ -2,10 +2,10 @@
 
 name: 'Plan Base'
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  
+
   push:
     branches: [ rleon/* ]
 
@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       # Configure aws credentials
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -33,7 +33,7 @@ jobs:
           aws-access-key-id: ${{ secrets.BASE_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.BASE_AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
-          
+
       # Runs terraform stack VPC
       - name: 'Checkout'
         uses: actions/checkout@master

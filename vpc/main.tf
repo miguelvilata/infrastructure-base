@@ -245,6 +245,7 @@ resource "aws_security_group" "admin" {
   vpc_id      = aws_vpc.vpc.id
 
   egress {
+    description = "Admin eks security group"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
