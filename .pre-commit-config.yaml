@@ -33,6 +33,11 @@ repos:
           - '--args=--only=terraform_deprecated_interpolation'
           - '--args=--only=terraform_required_version'
           - '--args=--only=terraform_required_providers'
+      - id: terraform_tfsec
+        args:
+          - '--args=--force-all-dirs'
+          - '--args=--exclude-downloaded-modules'
+          - '--args=--format json'
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.7.3
     hooks:
