@@ -75,7 +75,6 @@ resource "aws_subnet" "private_subnet" {
 #################
 ## BBDD SUBNET ##
 #################
-
 resource "aws_subnet" "bbdd_subnet" {
   count                   = length(data.aws_availability_zones.available.names)
   vpc_id                  = aws_vpc.vpc.id
@@ -111,7 +110,6 @@ resource "aws_eip" "nat_az" {
 ########################
 ## CREATE NAT GATEWAY ##
 ########################
-
 resource "aws_nat_gateway" "gw_az" {
   count         = var.cant_nat
   allocation_id = aws_eip.nat_az[count.index].id

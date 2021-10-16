@@ -1,5 +1,12 @@
 default_stages: [commit]
 repos:
+  - repo: local
+    hooks:
+      - id: jenkinsfile
+        name: test
+        entry: bash -c 'if [ -e Jenkinsfile ]; then curl -u $JENKINS_USER:$JENKINS_PASSWORD -X POST -H $JENKINS_CRUMB -F "jenkinsfile=<Jenkinsfile" $JENKINS_URL_VALIDATE; else echo "No Jenkinsfile found"; fi'
+        language: script
+        types: [bash]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
