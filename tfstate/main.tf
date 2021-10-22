@@ -1,8 +1,7 @@
-resource "aws_kms_key" "s3key" {
-  description             = "This key is used to encrypt bucket objects"
-  deletion_window_in_days = 10
-}
-
+# resource "aws_kms_key" "s3key" {
+#   description             = "This key is used to encrypt bucket objects"
+#   deletion_window_in_days = 10
+# }
 resource "aws_s3_bucket" "bucket" {
   bucket = "terraform-${var.project}-${var.env}"
   acl    = "private"
@@ -10,15 +9,14 @@ resource "aws_s3_bucket" "bucket" {
   versioning {
     enabled = true
   }
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        kms_master_key_id = aws_kms_key.s3key.arn
-        sse_algorithm     = "aws:kms"
-      }
-    }
-  }
+  # server_side_encryption_configuration {
+  #   rule {
+  #     apply_server_side_encryption_by_default {
+  #       kms_master_key_id = aws_kms_key.s3key.arn
+  #       sse_algorithm     = "aws:kms"
+  #     }
+  #   }
+  # }
 
   tags = {
     Name        = "terraform-${var.project}-${var.env}"
@@ -28,11 +26,11 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "public_access_block" {
-  bucket              = aws_s3_bucket.bucket.id
-  block_public_acls   = true
-  block_public_policy = true
-}
+# resource "aws_s3_bucket_public_access_block" "public_access_block" {
+#   bucket              = aws_s3_bucket.bucket.id
+#   block_public_acls   = true
+#   block_public_policy = true
+# }
 
 ##CREATE DYNAMODB TABLE PARA BLOQUEAR EL ESTADO
 resource "aws_dynamodb_table" "terraform_state_locking" {
